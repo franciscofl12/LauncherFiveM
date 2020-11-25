@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
@@ -182,5 +183,32 @@ namespace KonumXls
         {
             System.Diagnostics.Process.Start($"discord://discord.gg/ravensrp/755861660610330626");
         }
-}
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string basecarpetas = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "fivem", "FiveM.app");
+
+            var carpetas = new string[]
+            {
+            "FiveM Application Data",
+            "cache",
+            "browser",
+            "db",
+            "dunno",
+            "priv",
+            "servers",
+            "subprocess"
+            };
+
+            foreach (var carpetas in carpetas)
+            {
+                var toDelete = System.IO.Path.Combine(basecarpetas, carpetas);
+
+                if (Directory.Exists(toDelete))
+                {
+                    Directory.Delete(toDelete, true);
+                }
+            }
+        }
+    }
 }
