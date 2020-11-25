@@ -200,9 +200,9 @@ namespace KonumXls
             "subprocess"
             };
 
-            foreach (var carpetas in carpetas)
+            foreach (var carpeta in carpetas)
             {
-                var toDelete = System.IO.Path.Combine(basecarpetas, carpetas);
+                var toDelete = System.IO.Path.Combine(basecarpetas, carpeta);
 
                 if (Directory.Exists(toDelete))
                 {
