@@ -109,10 +109,14 @@ namespace KonumXls
                 this.Left = Cursor.Position.X - MouseX;
             }
         }
+
+        int contador = 5;
+
         private void Form1_Load(object sender, EventArgs e)
         {
             Server= new Fivem("151.80.111.185:30120");
             timer1.Start();
+            
 
             if (Server.GetStatu())
             {
@@ -125,11 +129,27 @@ namespace KonumXls
                 label2.Text = "Server OFF";
                 label2.ForeColor = Color.Red;
             }
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            contador--;
+
+            if (contador <= 0)
+            {
+                Server = new Fivem("151.80.111.185:30120");
+                if (Server != null)
+                {
+                    UpdatePlayerList();
+                }
+                contador = 5;
+            }
         }
 
         public void UpdatePlayerList()
         {
-            label3.Text = "Online: "+Server.GetOnlinePlayersCount().ToString() + " / " + Server.GetMaxPlayersCount() +" Jugadores";
+            label3.Text = "Conectados: "+Server.GetOnlinePlayersCount().ToString() + " / " + Server.GetMaxPlayersCount() +" Jugadores";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -162,5 +182,5 @@ namespace KonumXls
         {
             System.Diagnostics.Process.Start($"discord://discord.gg/ravensrp/755861660610330626");
         }
-    }
+}
 }
