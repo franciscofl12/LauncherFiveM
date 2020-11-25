@@ -1,37 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
-
-
-namespace LauncherFiveM
+using EpEren.Fivem.ServerStatus.ServerAPI;
+using System.Linq;
+namespace KonumXls
 {
-    public partial class Screen : Form
+    public partial class ServerAPI : Form
     {
-        public Screen()
+        public ServerAPI()
         {
             InitializeComponent();
         }
 
-        public int pCount()
-        {
-            using (WebClient wc = new WebClient())
-            {
-                string json = wc.DownloadString($"http://cfx.r/join/om4z9r/players.json");
-                int player = json.Length - json.Replace("{", "").Length;
-                return player;
-            }
-        }
-
+        Fivem Server;
         private bool Drag;
         private int MouseX;
         private int MouseY;
+
 
         private const int WM_NCHITTEST = 0x84;
         private const int HTCLIENT = 0x1;
@@ -123,52 +109,58 @@ namespace LauncherFiveM
                 this.Left = Cursor.Position.X - MouseX;
             }
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
+            Server= new Fivem("151.80.111.185:30120");
+            timer1.Start();
 
+            if (Server.GetStatu())
+            {
+                label2.Text = "Server ON";
+                label2.ForeColor = Color.Green;
+                UpdatePlayerList();
+            }
+            else
+            {
+                label2.Text = "Server OFF";
+                label2.ForeColor = Color.Red;
+            }
         }
 
+        public void UpdatePlayerList()
+        {
+            label3.Text = "Online: "+Server.GetOnlinePlayersCount().ToString() + " / " + Server.GetMaxPlayersCount() +" Jugadores";
+        }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start($"fivem://cfx.r/join/om4z9r");
-            //this.Close();
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start($"ts3server://ravensrp");
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Process.Start($"http://github.com/franciscofl12");
+        }
+
+        private void play_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start($"fivem://cfx.r/join/om4z9r");
             this.Close();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
-            pCount();
+            System.Diagnostics.Process.Start($"ts3server://ravensrp");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start($"discord://discord.gg/ravensrp/755861660610330626");
         }
     }
 }
