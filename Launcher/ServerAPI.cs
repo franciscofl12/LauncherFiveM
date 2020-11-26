@@ -115,20 +115,20 @@ namespace Xisko
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Server= new Fivem("151.80.111.185:30120");
+            Server = new Fivem("151.80.111.185:30120");
             timer1.Start();
-            
+
 
             if (Server.GetStatu())
             {
-                label2.Text = "Server ON";
-                label2.ForeColor = Color.Green;
+                label6.Text = "Server ON";
+                label6.ForeColor = Color.Green;
                 UpdatePlayerList();
             }
             else
             {
-                label2.Text = "Server OFF";
-                label2.ForeColor = Color.Red;
+                label6.Text = "Server ON";
+                label6.ForeColor = Color.Red;
             }
 
         }
@@ -150,7 +150,7 @@ namespace Xisko
 
         public void UpdatePlayerList()
         {
-            label3.Text = "Conectados: "+Server.GetOnlinePlayersCount().ToString() + " / " + Server.GetMaxPlayersCount() +" Jugadores";
+            label3.Text = "Conectados: " + Server.GetOnlinePlayersCount().ToString() + " / " + Server.GetMaxPlayersCount();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -170,7 +170,7 @@ namespace Xisko
 
         private void play_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start($"fivem://cfx.r/join/om4z9r");
+            System.Diagnostics.Process.Start($"fivem://cfx.re/join/om4z9r");
             this.Close();
         }
 
@@ -208,11 +208,6 @@ namespace Xisko
                     Directory.Delete(toDelete, true);
                 }
             }
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
