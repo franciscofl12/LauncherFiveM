@@ -194,7 +194,6 @@ namespace KonumXls
             "cache",
             "browser",
             "db",
-            "dunno",
             "priv",
             "servers",
             "subprocess"
@@ -203,7 +202,7 @@ namespace KonumXls
             foreach (var carpeta in carpetas)
             {
                 var toDelete = System.IO.Path.Combine(basecarpetas, carpeta);
-
+                                  
                 if (Directory.Exists(toDelete))
                 {
                     Directory.Delete(toDelete, true);
