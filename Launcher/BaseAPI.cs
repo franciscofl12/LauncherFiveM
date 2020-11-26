@@ -4,7 +4,7 @@ using System.Threading;
 using System.Windows.Forms;
 using EpEren.Fivem.ServerStatus.BaseAPI;
 using System.Linq;
-namespace KonumXls
+namespace Xisko
 {
     public partial class BaseAPI : Form
     {

@@ -5,7 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 using EpEren.Fivem.ServerStatus.ServerAPI;
 using System.Linq;
-namespace KonumXls
+namespace Xisko
 {
     public partial class ServerAPI : Form
     {
@@ -208,6 +208,11 @@ namespace KonumXls
                     Directory.Delete(toDelete, true);
                 }
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace KonumXls
+﻿namespace Xisko
 {
     partial class BaseAPI
     {
@@ -73,6 +73,11 @@
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // BaseAPI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -84,6 +89,7 @@
             this.Controls.Add(this.label2);
             this.MaximumSize = new System.Drawing.Size(720, 480);
             this.Name = "BaseAPI";
+            this.Text = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

@@ -1,4 +1,4 @@
-﻿namespace KonumXls
+﻿namespace Xisko
 {
     partial class ServerAPI
     {
@@ -46,6 +46,11 @@
             this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.play)).BeginInit();
             this.SuspendLayout();
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label2
             // 
