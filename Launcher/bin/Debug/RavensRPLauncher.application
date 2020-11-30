@@ -4,17 +4,17 @@
   <description asmv2:publisher="RavensRPLauncher" asmv2:product="RavensRPLauncher" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.6" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="RavensRPLauncher.exe.manifest" size="6078">
+    <dependentAssembly dependencyType="install" codebase="RavensRPLauncher.exe.manifest" size="7941">
       <assemblyIdentity name="RavensRPLauncher.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XBbd8Ow4A4lOzaqe+6SBhtL/NosWYv6KP5l280dwWHQ=</dsig:DigestValue>
+        <dsig:DigestValue>J6mQSu5DpRSh6rt3oGpCL/u/fbjkXZjFTWV1XDIwBXc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

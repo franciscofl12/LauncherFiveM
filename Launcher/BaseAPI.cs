@@ -9,7 +9,7 @@ namespace Xisko
     public partial class BaseAPI : Form
     {
         public BaseAPI()
-        {
+        { 
             InitializeComponent();
         }
 

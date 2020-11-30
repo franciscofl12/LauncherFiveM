@@ -10,7 +10,8 @@ namespace Xisko
     public partial class ServerAPI : Form
     {
         public ServerAPI()
-        {
+        {   
+            //if (System.Diagnostics.Process.Start(=fivem")
             InitializeComponent();
         }
 
@@ -118,7 +119,6 @@ namespace Xisko
             Server = new Fivem("151.80.111.185:30120");
             timer1.Start();
 
-
             if (Server.GetStatu())
             {
                 label6.Text = "Server ON";
@@ -163,11 +163,6 @@ namespace Xisko
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start($"http://github.com/franciscofl12");
-        }
-
         private void play_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start($"fivem://cfx.re/join/om4z9r");
@@ -208,6 +203,11 @@ namespace Xisko
                     Directory.Delete(toDelete, true);
                 }
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start($"http://github.com/franciscofl12");
         }
     }
 }
