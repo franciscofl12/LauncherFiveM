@@ -189,6 +189,7 @@ namespace Xisko
             "cache",
             "browser",
             "db",
+            "dunno",
             "priv",
             "servers",
             "subprocess"
@@ -201,6 +202,11 @@ namespace Xisko
                 if (Directory.Exists(toDelete))
                 {
                     Directory.Delete(toDelete, true);
+                    MessageBox.Show("Cache borrado!");
+                }
+                else
+                {
+                    MessageBox.Show("El cache no se borro. Tal vez esté ya borrado o la ruta del juego no es la de por defecto.");
                 }
             }
         }
