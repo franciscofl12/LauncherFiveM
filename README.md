@@ -1,2 +1,2 @@
 # LauncherFiveM
-Launcher Privado para RavensRP.
+Launcher FiveM Server para RavensRP.
